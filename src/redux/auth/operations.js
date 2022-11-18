@@ -28,6 +28,8 @@ export const logIn = createAsyncThunk(
 );
 export const logOut = createAsyncThunk(
   'auth/logout',
-  async (credentials, thunkAPI) => {}
+  async (credentials, thunkAPI) => {
+    clearAuthHeader();
+  }
 );
 export const refreshUser = createAsyncThunk();

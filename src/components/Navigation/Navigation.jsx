@@ -3,8 +3,7 @@ import { useAuth } from 'hooks';
 import css from './Navigation.module.css';
 
 export const Navigation = () => {
-  // const { isLoggedIn } = useAuth();
-  const isLoggedIn = false;
+  const { isLoggedIn } = useAuth();
 
   return (
     <nav>
