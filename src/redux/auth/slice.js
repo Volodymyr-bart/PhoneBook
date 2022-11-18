@@ -12,10 +12,20 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
+    [register.pending](state) {
+      state.error = null;
+      state.isLoading = true;
+    },
     [register.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
+      state.error = null;
+      state.isLoading = false;
+    },
+    [register.rejected](state, action) {
+      state.error = action.payload;
+      state.isLoading = false;
     },
     [logIn.fulfilled](state, action) {
       state.user = action.payload.user;
