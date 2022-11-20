@@ -31,19 +31,19 @@ export const App = () => {
         <Route
           path="/register"
           element={
-            <RestrictedRoute component={RegisterPage} redirectTo="/contacts" />
+            <RestrictedRoute redirectTo="/contacts" component={RegisterPage} />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute component={LoginPage} redirectTo="/contacts" />
+            <RestrictedRoute redirectTo="/contacts" component={LoginPage} />
           }
         />
         <Route
           path="/contacts"
           element={
-            <PrivateRoute component={ContactsPage} redirectTo="/login" />
+            <PrivateRoute redirectTo="/login" component={ContactsPage} />
           }
         />
       </Route>
