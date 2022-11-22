@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -6,6 +6,7 @@ import { nanoid } from 'nanoid';
 
 import { AddButton, Error, FormStyled, Input } from './ContactsForm.styled';
 import { addContact } from 'redux/Contacts/operations';
+import { selectContacts } from 'redux/Contacts/selectors';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -18,11 +19,23 @@ const initialValues = {
 };
 
 export const ContactForm = () => {
+  const contacts = useSelector(selectContacts);
+
   const dispatch = useDispatch();
   const handleSubmit = (values, { resetForm }) => {
-    values.id = nanoid();
-    dispatch(addContact(values));
-    resetForm();
+    const { name, number } = values;
+    if (
+      !contacts.some(
+        contact => contact.name === name || contact.number === number
+      )
+    ) {
+      values.id = nanoid();
+      dispatch(addContact(values));
+      resetForm();
+      console.log('New user');
+    } else {
+      console.log('Enter uniq date');
+    }
   };
   return (
     <Formik
