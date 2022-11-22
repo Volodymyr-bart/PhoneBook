@@ -7,10 +7,11 @@ import { deleteContact } from 'redux/Contacts/operations';
 export const ContactPerson = ({ name, number, id }) => {
   const dispatch = useDispatch();
   return (
-    <PersonStyled>
+    <PersonStyled spacing={2}>
       <span>
         {name}: {number}
       </span>
+
       <DeleteButton
         onClick={() => {
           dispatch(deleteContact(id));

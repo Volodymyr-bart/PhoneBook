@@ -2,7 +2,6 @@ import { Navigation } from '../Navigation/Navigation';
 import { UserMenu } from '../UserMenu/UserMenu';
 import { AuthNav } from '../AuthNav/AuthNav';
 import { useAuth } from 'hooks';
-// import css from './AppBar.module.css';
 import { AppBar, Box } from '@mui/material';
 
 import { StyledToolbar } from './AppBar.styled';

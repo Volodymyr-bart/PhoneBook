@@ -1,8 +1,8 @@
 // import styled from 'styled-components';
 
 // import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
+// import { Stack, Box } from '@mui/material/Stack';
+// import { styled } from '@mui/material/styles';
 
 // export const ListContacts = styled.ul`
 //   display: flex;
@@ -14,9 +14,9 @@ import { styled } from '@mui/material/styles';
 //   border: dotted 1px;
 // `;
 
-export const List = styled(Stack)(() => ({
-  spacing: 2,
-}));
+// export const List = styled(Box)(() => ({
+//   spacing: 2,
+// }));
 // const Item = styled(Paper)(({ theme }) => ({
 //   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
 //   ...theme.typography.body2,
