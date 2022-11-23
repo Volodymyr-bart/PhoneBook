@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { ContactPerson } from 'components/ContactPerson/ContactPerson';
 import { SelectVisibleContacts } from 'redux/Contacts/selectors';
-import { List } from './ContactsList.styled';
+// import { List } from './ContactsList.styled';
 import { Box } from '@mui/material';
 
 export const ContactList = () => {
