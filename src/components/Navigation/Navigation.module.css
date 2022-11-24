@@ -1,14 +1,9 @@
-.nav {
-  display: flex;
-  align-items: center;
-  /* justify-content: center; */
-}
 .link {
   display: inline-block;
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  color: #fff;
+  color: #2a363b;
 }
 
 .link.active {
