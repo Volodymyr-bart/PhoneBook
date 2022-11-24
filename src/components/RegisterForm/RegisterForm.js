@@ -1,3 +1,4 @@
+import { Button, TextField } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
@@ -44,7 +45,7 @@ export const RegisterForm = () => {
 
   const nameHandler = e => {
     setName(e.target.value);
-    if (e.target.valuelength < 3) {
+    if (e.target.value.length < 3) {
       setNameError('Enter name more 3 symbols');
     } else {
       setNameError('');
@@ -74,9 +75,9 @@ export const RegisterForm = () => {
     const form = e.currentTarget;
     dispatch(
       register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        name,
+        email,
+        password,
       })
     );
     form.reset();
@@ -87,7 +88,7 @@ export const RegisterForm = () => {
       {nameDirty && nameError && (
         <div style={{ color: 'red' }}>{nameError}</div>
       )}
-      <input
+      <TextField
         value={name}
         onBlur={e => blurHandler(e)}
         name="name"
@@ -98,7 +99,7 @@ export const RegisterForm = () => {
       {emailDirty && emailError && (
         <div style={{ color: 'red' }}>{emailError}</div>
       )}
-      <input
+      <TextField
         value={email}
         onBlur={e => blurHandler(e)}
         name="email"
@@ -109,7 +110,7 @@ export const RegisterForm = () => {
       {passwordDirty && passwordError && (
         <div style={{ color: 'red' }}>{passwordError}</div>
       )}
-      <input
+      <TextField
         value={password}
         onBlur={e => blurHandler(e)}
         name="password"
@@ -117,9 +118,9 @@ export const RegisterForm = () => {
         placeholder="Enter your password"
         onChange={e => passwordHandler(e)}
       />
-      <button disabled={!formValid} type="submit">
+      <Button variant="contained" disabled={!formValid} type="submit">
         Register
-      </button>
+      </Button>
     </form>
   );
 };
