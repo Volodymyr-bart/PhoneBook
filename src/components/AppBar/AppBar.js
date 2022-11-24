@@ -3,14 +3,28 @@ import { UserMenu } from '../UserMenu/UserMenu';
 import { AuthNav } from '../AuthNav/AuthNav';
 import { useAuth } from 'hooks';
 import css from './AppBar.module.css';
+import { AppBar, Box } from '@mui/material';
+import { StyledToolbar } from './AppBar.styled';
 
-export const AppBar = () => {
+export const AppBarResponsive = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <header className={css.header}>
-      <Navigation />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </header>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <StyledToolbar>
+          <Navigation />
+
+          {isLoggedIn ? <UserMenu /> : <AuthNav />}
+        </StyledToolbar>
+      </AppBar>
+    </Box>
   );
 };
+
+// return (
+//   <header className={css.header}>
+//     <Navigation />
+//     {isLoggedIn ? <UserMenu /> : <AuthNav />}
+//   </header>
+// );
