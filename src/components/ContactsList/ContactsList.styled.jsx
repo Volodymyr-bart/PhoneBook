@@ -1,4 +1,4 @@
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
 // import Paper from '@mui/material/Paper';
 // import { Stack, Box } from '@mui/material/Stack';
@@ -24,3 +24,12 @@
 //   textAlign: 'center',
 //   color: theme.palette.text.secondary,
 // }));
+
+import { Box } from '@mui/material';
+
+export const StyledBox = styled(Box)(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  marginTop: '50px',
+  gap: '20px',
+}));

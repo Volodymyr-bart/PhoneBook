@@ -5,12 +5,17 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 export const PersonStyled = styled(Paper)(() => ({
   display: 'space-betwen',
-  width: '80%',
+  minWidth: '45%',
+  width: 'fit-content',
   textAlign: 'center',
   gap: '10px',
   padding: '10px',
   backgroundColor: '#7fb8f2',
   color: '#fff',
+  marginRight: 'auto',
+  marginLeft: 'auto',
+  // alignSelf: 'center',
+  // justifySelf: 'center',
 }));
 export const DeleteButton = styled(DeleteIcon)(() => ({
   cursor: 'pointer',

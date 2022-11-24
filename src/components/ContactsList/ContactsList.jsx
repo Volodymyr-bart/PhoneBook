@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux';
 import { ContactPerson } from 'components/ContactPerson/ContactPerson';
 import { SelectVisibleContacts } from 'redux/Contacts/selectors';
 // import { List } from './ContactsList.styled';
-import { Box } from '@mui/material';
+// import { Box } from '@mui/material';
+import { StyledBox } from './ContactsList.styled';
 
 export const ContactList = () => {
   const list = useSelector(SelectVisibleContacts);
@@ -12,11 +13,11 @@ export const ContactList = () => {
   return (
     <>
       {list && (
-        <Box sx={{ width: '100%' }}>
+        <StyledBox sx={{ width: '100%' }}>
           {list.map(({ id, name, number }) => (
             <ContactPerson key={id} id={id} name={name} number={number} />
           ))}
-        </Box>
+        </StyledBox>
       )}
     </>
   );
