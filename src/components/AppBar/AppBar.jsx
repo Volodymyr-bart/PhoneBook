@@ -7,14 +7,16 @@ import { AppBar, Box } from '@mui/material';
 import { StyledToolbar } from './AppBar.styled';
 
 export const AppBarResponsive = () => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, isRefreshing } = useAuth();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <StyledToolbar>
           <Navigation />
-          {isLoggedIn ? <UserMenu /> : <AuthNav />}
+          {isLoggedIn && !isRefreshing && <UserMenu />}
+          {!isLoggedIn && !isRefreshing && <AuthNav />}
+          {/* {isLoggedIn ? <UserMenu /> : <AuthNav />} */}
         </StyledToolbar>
       </AppBar>
     </Box>
